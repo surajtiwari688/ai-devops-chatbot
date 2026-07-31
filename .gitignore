@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+
+# Virtual Environment
+venv/
+.venv/
+
+# VS Code
+.vscode/
+
+# Environment Variables
+.env
+
+# Logs
+*.log
+
+# Terraform
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+crash.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+.terraform.lock.hcl
+
+# OS
+.DS_Store
+Thumbs.db

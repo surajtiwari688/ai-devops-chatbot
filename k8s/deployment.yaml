@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ai-chatbot-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ai-chatbot
+  template:
+    metadata:
+      labels:
+        app: ai-chatbot
+    spec:
+      containers:
+      - name: ai-chatbot
+        image: ghcr.io/surajtiwari688/ai-chatbot:v2
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080

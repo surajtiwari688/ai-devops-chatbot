@@ -1,23 +1,9 @@
-"""from openai import OpenAI
-from dotenv import load_dotenv
-import os
+from ollama import Client
 
-load_dotenv()
-
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+client = Client(host="http://host.minikube.internal:11434")
 
 def ask_ai(message: str):
-    response = client.responses.create(
-        model="gpt-4.1-mini",
-        input=message
-    )
-
-    return response.output_text"""
-
-import ollama
-
-def ask_ai(message: str):
-    response = ollama.chat(
+    response = client.chat(
         model="llama3.2", 
         messages=[
             {
@@ -29,7 +15,7 @@ def ask_ai(message: str):
             },
             {
                 "role": "user", 
-                "content": message
+                "content": message,
             }
         ]
     )
