@@ -18,3 +18,38 @@ spec:
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
+        env:
+        - name: OLLAMA_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: ai-chatbot-config
+              key: OLLAMA_HOST
+        - name: MODEL_NAME
+          valueFrom:
+            configMapKeyRef:
+              name: ai-chatbot-config
+              key: MODEL_NAME
+        - name: API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: ai-chatbot-secret
+              key: API_KEY
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "256m"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+        livenessProbe:
+          httpGet:
+            path: /docs
+            port: 8000
+          initialDelaySeconds: 20
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /docs
+            port: 8000
+          initialDelaySeconds: 10
+          periodSeconds: 5

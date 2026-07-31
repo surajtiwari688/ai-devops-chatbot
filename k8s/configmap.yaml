@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ai-chatbot-config
+data:
+  OLLAMA_HOST: "http://host.minikube.internal:11434"
+  MODEL_NAME: "llama3.2"
