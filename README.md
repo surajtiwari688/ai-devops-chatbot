@@ -19,16 +19,4 @@ minikube service ai-chatbot-service
 
 # Architecture
 
-User
-   ↓
-FastAPI
-   ↓
-Kubernetes (Minikube)
-   ↓
-Python Chatbot
-   ↓
-Ollama
-   ↓
-Llama 3.2
-   ↓
-AI Response
+User -> FastAPI -> Kubernetes (Minikube) -> Python Chatbot -> Ollama -> Llama 3.2 -> AI Response
