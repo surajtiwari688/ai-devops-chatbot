@@ -29,13 +29,13 @@ jobs:
           docker build -t ghcr.io/${{ github.actor }}/ai-chatbot:v3 .
       
       - name: Run Trivy vulnerability Scan
-        uses: aquasecurity/trivy-action@master
+        uses: aquasecurity/trivy-action@v0.36.0
         with:
           image-ref: ghcr.io/${{ github.actor }}/ai-chatbot:v3
           format: 'table'
           exit-code: '1'
           ignore-unfixed: true
-          severity: CRITICAL, HIGH
+          severity: 'CRITICAL,HIGH'
 
       - name: Push Docker image
         run: |
