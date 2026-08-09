@@ -1,6 +1,6 @@
 from ollama import Client
 
-client = Client(host="http://host.minikube.internal:11434")
+client = Client(host="http://host.docker.internal:11434")
 
 def ask_ai(message: str):
     response = client.chat(

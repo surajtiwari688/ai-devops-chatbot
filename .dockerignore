@@ -27,3 +27,6 @@ terraform.tfstate.backup
 
 # macOS
 .DS_Store
+
+.sonar
+.gitignore

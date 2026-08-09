@@ -1,0 +1,6 @@
+projectKey=ai-devops-chatbot
+serverUrl=http://localhost:9000
+serverVersion=26.8.0.126808
+dashboardUrl=http://localhost:9000/dashboard?id=ai-devops-chatbot
+ceTaskId=a9a8237c-555e-4fec-8151-51ca5e809e58
+ceTaskUrl=http://localhost:9000/api/ce/task?id=a9a8237c-555e-4fec-8151-51ca5e809e58
