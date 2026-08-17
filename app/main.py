@@ -11,6 +11,12 @@ class ChatRequest(BaseModel):
 def home():
     return {"message": "Welcome to AI ChatBot"}
 
+@app.get("/health")
+def health():
+    return {
+        "status": "UP",      
+        "service": "AI ChatBot",}
+
 @app.post("/chat")
 def chat(request: ChatRequest):
     reply = ask_ai(request.message)
